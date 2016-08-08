@@ -1,4 +1,4 @@
-# cordova-plugin-mauron85-background-geolocation
+# cordova-plugin-quintech-background-geolocation
 
 ## Description
 
@@ -10,7 +10,7 @@ On Android you can choose from two location location providers:
 * **ANDROID_DISTANCE_FILTER_PROVIDER** (forked from [cordova-plugin-background-geolocation](https://github.com/christocracy/cordova-plugin-background-geolocation))
 * **ANDROID_ACTIVITY_PROVIDER**
 
-See wiki [Which provider should I use?](https://github.com/mauron85/cordova-plugin-background-geolocation/blob/next/PROVIDERS.md) for more information about providers.
+See wiki [Which provider should I use?](https://github.com/quintech/cordova-plugin-background-geolocation/blob/next/PROVIDERS.md) for more information about providers.
 
 ## Semantic Versioning
 This plugin is following semantic versioning as defined http://semver.org
@@ -38,7 +38,7 @@ Some incompatible changes were introduced:
 ## Installing the plugin
 
 ```
-cordova plugin add cordova-plugin-mauron85-background-geolocation
+cordova plugin add cordova-plugin-quintech-background-geolocation
 ```
 
 ## Registering plugin for Adobe® PhoneGap™ Build
@@ -47,7 +47,7 @@ This plugin should work with Adobe® PhoneGap™ Build without any modification.
 To register plugin add following line into your config.xml:
 
 ```
-<gap:plugin name="cordova-plugin-mauron85-background-geolocation" source="npm"/>
+<gap:plugin name="cordova-plugin-quintech-background-geolocation" source="npm"/>
 ```
 
 NOTE: If you're using *hydration*, you have to download and reinstall your app with every new version of the plugin, as plugins are not updated.
@@ -114,7 +114,7 @@ function onDeviceReady () {
 
 ## Example Application
 
-Checkout repository [cordova-plugin-background-geolocation-example](https://github.com/mauron85/cordova-plugin-background-geolocation-example).
+Checkout repository [cordova-plugin-background-geolocation-example](https://github.com/quintech/cordova-plugin-background-geolocation-example).
 
 ## API
 
@@ -138,7 +138,7 @@ Parameter | Type | Platform     | Description
 `option.notificationIconColor` | `String` optional| Android | The accent color to use for notification. Eg. **#4CAF50**.
 `option.notificationIconLarge` | `String` optional | Android | The filename of a custom notification icon. See android quirks.
 `option.notificationIconSmall` | `String` optional | Android | The filename of a custom notification icon. See android quirks.
-`option.locationProvider` | `Number` | Android | Set location provider **@see** [wiki](https://github.com/mauron85/cordova-plugin-background-geolocation/wiki/Android-providers)
+`option.locationProvider` | `Number` | Android | Set location provider **@see** [wiki](https://github.com/quintech/cordova-plugin-background-geolocation/wiki/Android-providers)
 `option.activityType` | `String` | iOS | [AutomotiveNavigation, OtherNavigation, Fitness, Other] Presumably, this affects iOS GPS algorithm. **@see** [Apple docs](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html#//apple_ref/occ/instp/CLLocationManager/activityType) for more information
 `options.url` | `String` | iOS, Android | Server url where to send HTTP POST with recorded locations
 `options.httpHeaders` | `Object` | iOS, Android | Optional HTTP headers sent along in HTTP request
@@ -345,7 +345,7 @@ Since the plugin uses **iOS** significant-changes API, the plugin cannot detect 
 
 Android **WILL** execute your configured ```callbackFn```. This is the main difference from original christocracy plugin. Android is using intents to do so.
 
-On Android devices it is required to have a notification in the drawer because it's a "foreground service".  This gives it high priority, decreasing probability of OS killing it. Check [wiki](https://github.com/mauron85/cordova-plugin-background-geolocation/wiki/Android-implementation) for explanation.
+On Android devices it is required to have a notification in the drawer because it's a "foreground service".  This gives it high priority, decreasing probability of OS killing it. Check [wiki](https://github.com/quintech/cordova-plugin-background-geolocation/wiki/Android-implementation) for explanation.
 
 If main activity is killed by the system and ```stopOnTerminate``` option is false, plugin will store locations into database. Stored locations can be retrieved later with ```getAllLocations``` method. Locations are also stored, when ```debug``` option is **true**. However in this case all stored locations, are flagged with ```debug: true``` and can be easily filtered.
 
@@ -389,7 +389,7 @@ Android 6.0 "Marshmallow" introduced a new permissions model where the user can 
 
 **NOTE:** Only available for API Level >=21.
 
-To use custom notification icons, you need to put icons into *res/drawable* directory **of your app**. You can automate the process  as part of **after_platform_add** hook configured via [config.xml](https://github.com/mauron85/cordova-plugin-background-geolocation-example/blob/master/config.xml). Check [config.xml](https://github.com/mauron85/cordova-plugin-background-geolocation-example/blob/master/config.xml) and [scripts/res_android.js](https://github.com/mauron85/cordova-plugin-background-geolocation-example/blob/master/scripts/res_android.js) of example app for reference.
+To use custom notification icons, you need to put icons into *res/drawable* directory **of your app**. You can automate the process  as part of **after_platform_add** hook configured via [config.xml](https://github.com/quintech/cordova-plugin-background-geolocation-example/blob/master/config.xml). Check [config.xml](https://github.com/quintech/cordova-plugin-background-geolocation-example/blob/master/config.xml) and [scripts/res_android.js](https://github.com/quintech/cordova-plugin-background-geolocation-example/blob/master/scripts/res_android.js) of example app for reference.
 
 With Adobe® PhoneGap™ Build icons must be placed into ```locales/android/drawable``` dir at the root of your project. For more information go to [how-to-add-native-image-with-phonegap-build](http://stackoverflow.com/questions/30802589/how-to-add-native-image-with-phonegap-build/33221780#33221780).
 
