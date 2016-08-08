@@ -2,7 +2,7 @@
 
 ## Description
 
-This plugin is based on cordova-plugin-mauron85-background-geolocation. It is modified so that it could be used by me in one of my projects where I need to constantly fire the onLocationChange event, even in the background. These changes seem to have done the job.
+This plugin is based on cordova-plugin-mauron85-background-geolocation. It was modified so that it could be used by me in one of my projects where I need to constantly fire the onLocationChange event, even in the background. These changes seem to have done the job.
 
 ## Licence ##
 
